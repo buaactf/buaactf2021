@@ -1,0 +1,2 @@
+#define PACKDLL_API __declspec(dllexport)
+#define PACKDLL_API __declspec(dllimport)
