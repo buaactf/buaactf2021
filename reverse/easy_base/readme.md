@@ -30,6 +30,6 @@
 
 从start进入_libc_csu_init，可以看到 `v4 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;`
 
-即随后的for循环就是调用这两个地址之间的所有函数
+随后的for循环就是调用这两个地址之间的所有函数
 
 进入该地址即可找到换表函数 `__libc_init`，dump下来并调一调顺序就可以，或者手动把花指令以及反调试去掉，然后再动调
